@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIMBACOIN - The Savage Memecoin</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(180deg, #000000, #013220);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  header img {
+    width: 120px;
+    margin-top: 20px;
+  }
+  h1 {
+    font-size: 3.5em;
+    margin-top: 10px;
+    color: #00ff99;
+    text-shadow: 0 0 20px #00ff99;
+  }
+  h2 {
+    color: #b8ffda;
+    margin-bottom: 40px;
+  }
+  .countdown {
+    font-size: 3em;
+    font-weight: bold;
+    color: #00ff99;
+    text-shadow: 0 0 25px #00ff99;
+    margin: 30px 0;
+  }
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+  }
+  .buttons a, .buttons button {
+    background: #00ff99;
+    color: #000;
+    font-weight: bold;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .buttons a:hover, .buttons button:hover {
+    background: #fff;
+    color: #013220;
+    transform: scale(1.05);
+  }
+  footer {
+    margin-top: 60px;
+    font-size: 0.9em;
+    color: #999;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  .overlay button {
+    background: #00ff99;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  #quoteBox {
+    font-size: 1.4em;
+    font-style: italic;
+    margin-top: 25px;
+    color: #b8ffda;
+    transition: all 0.3s ease;
+  }
+  img.decor {
+    width: 200px;
+    margin: 25px auto;
+    display: block;
+    filter: drop-shadow(0 0 10px #00ff99);
+  }
+</style>
+</head>
+<body>
+
+<div id="legalOverlay" class="overlay">
+  <h2>Welcome to SIMBACOIN 🦁</h2>
+  <p>This site is for entertainment purposes only. SimbaCoin is a meme-based token, not an investment.
+  By continuing, you agree that this project is purely for fun and community engagement.</p>
+  <button onclick="acceptLegal()">I Understand</button>
+</div>
+
+<header>
+  <img src="https://i.imgur.com/6qSNmbk.png" alt="SimbaCoin Icon">
+  <h1>SIMBACOIN</h1>
+  <h2>The savage memecoin that never backs down.</h2>
+</header>
+
+<div class="countdown" id="countdown"></div>
+
+<img src="https://i.imgur.com/zpPmvGV.png" alt="Simba Image" class="decor">
+
+<div class="buttons">
+  <a href="https://pump.fun" target="_blank">View Token</a>
+  <a href="https://discord.gg/jX2Y7JnnU" target="_blank">Discord</a>
+  <a href="https://t.me/SIMBA_COIN0" target="_blank">Telegram Global</a>
+  <a href="https://t.me/+xPRdiOc0fLNkMzA0" target="_blank">Telegram Hispano</a>
+  <a href="https://x.com/SIMBAC0IN_" target="_blank">Twitter / X</a>
+  <a href="https://www.instagram.com/simbacoiin" target="_blank">Instagram Main</a>
+  <a href="https://www.instagram.com/simbashopcoin" target="_blank">Shop Instagram</a>
+  <button id="roarBtn">🦁 Unleash the roar within</button>
+</div>
+
+<div id="quoteBox">Press the button and feel the roar...</div>
+
+<footer>
+  <p>© 2025 SimbaCoin | The Pride Never Sleeps 🦁</p>
+</footer>
+
+<script>
+function acceptLegal() {
+  document.getElementById('legalOverlay').style.display = 'none';
+}
+
+function updateCountdown() {
+  const targetDate = new Date("October 31, 2025 00:00:00").getTime();
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+  if (distance < 0) {
+    document.getElementById("countdown").innerHTML = "00:00:00:00";
+    return;
+  }
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("countdown").innerHTML =
+    (days < 10 ? "0" + days : days) + ":" +
+    (hours < 10 ? "0" + hours : hours) + ":" +
+    (minutes < 10 ? "0" + minutes : minutes) + ":" +
+    (seconds < 10 ? "0" + seconds : seconds);
+}
+setInterval(updateCountdown, 1000);
+
+const quotes = [
+  "Success is not for the lazy. – Elon Musk",
+  "Stay hungry, stay foolish. – Steve Jobs",
+  "The lion doesn’t turn around when a small dog barks.",
+  "Be fearless in the pursuit of what sets your soul on fire.",
+  "Winners focus on winning, losers focus on winners.",
+  "Dream big, roar louder.",
+  "Buy low, roar high! – SimbaCoin",
+  "Fortune favors the brave. – Virgil",
+  "Keep calm and trust the pride.",
+  "Every dip is a chance to roar louder.",
+  "Hodl strong, lions don’t panic.",
+  "SimbaCoin: because normal coins are too quiet.",
+  "Turn your fear into fuel. – Jordan Belfort",
+  "The jungle rewards the bold.",
+  "Roar now, thank yourself later."
+];
+
+document.getElementById("roarBtn").addEventListener("click", function() {
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  const quoteBox = document.getElementById("quoteBox");
+  quoteBox.innerHTML = '"' + randomQuote + '"';
+});
+</script>
+
+</body>
+</html>
